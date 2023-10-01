@@ -1,0 +1,10 @@
+.login-page {
+    background-image: url('login.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.login-form{
+    background-color: rgba(1,32,93,0.6);
+    color: #fff;
+}
