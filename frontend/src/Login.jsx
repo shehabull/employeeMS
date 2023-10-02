@@ -1,12 +1,13 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [values, setValues] = useState({
     email: "",
     password: "",
   });
-
+  const navigate = useNavigate();
   const [error, setError] = useState();
 
   const handleSubmit = (event) => {
@@ -15,7 +16,7 @@ function Login() {
       .post("http://localhost:8081/login", values)
       .then((res) => {
         if (res.data.Status === "Success") {
-          console.log("ok");
+          navigate("/");
         } else {
           setError(res.data.Error);
         }
